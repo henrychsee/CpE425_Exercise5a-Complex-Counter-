@@ -5,11 +5,10 @@
 				clock(negative-edged)
 				nreset(synchronous active low)
 				M(mode control)
-				
 */
 `timescale 1ns/1ps
 
-module complexCounter();
+module complexCounter(count,mode,clock,nreset);
 
 	input mode;
 	input clock;
@@ -31,30 +30,20 @@ module complexCounter();
 	//state transitions
 	always@(negedge clock or negedge nreset)
 		if(nreset)
+			cstate<=3'b000;
+		else
+			cstate<=nstate;
 			
-	//next state assignment
+	//next state and output assignment
 	always@(cstate)
 		case(cstate)
-			A:if(!mode)begin nstate<=B;count<=;end else nstate<=A;
-			B:if(!mode)nstate<=C;else nstate<=B;
-			C:if(!mode)nstate<=D;else nstate<=G;
-			D:if(!mode)nstate<=E;else nstate<=D;
-			E:if(!mode)nstate<=F;else nstate<=E;
-			F:if(!mode)nstate<=G;else nstate<=F;
-			G:if(!mode)nstate<=H;else nstate<=H;
-			H:if(!mode)nstate<=A;else nstate<=F;
-		endcase
-	
-	always@(cstate)
-		case(cstate)
-			A:if();else;
-			B:if();else;
-			C:if();else;
-			D:if();else;
-			E:if();else;
-			F:if();else;
-			G:if();else;
-			H:if();else;
-		endcase
-			
+			A:if(!mode)begin nstate<=B;count<=A;end else begin nstate<=A;count<=A;end
+			B:if(!mode)begin nstate<=C;count<=B;end else begin nstate<=B;count<=B;end
+			C:if(!mode)begin nstate<=D;count<=C;end else begin nstate<=G;count<=C;end
+			D:if(!mode)begin nstate<=E;count<=D;end else begin nstate<=D;count<=D;end
+			E:if(!mode)begin nstate<=F;count<=E;end else begin nstate<=E;count<=E;end
+			F:if(!mode)begin nstate<=G;count<=F;end else begin nstate<=F;count<=F;end
+			G:if(!mode)begin nstate<=H;count<=G;end else begin nstate<=H;count<=G;end
+			H:if(!mode)begin nstate<=A;count<=H;end else begin nstate<=F;count<=H;end
+		endcase			
 endmodule
