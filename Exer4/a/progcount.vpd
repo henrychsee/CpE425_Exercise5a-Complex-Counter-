@@ -1,0 +1,136 @@
+$date
+	Wed Jan 20 11:49:56 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_progcount $end
+$var wire 8 ! Y [7:0] $end
+$var reg 8 " A [7:0] $end
+$var reg 1 # Clk $end
+$var reg 1 $ CountEn $end
+$var reg 1 % Load $end
+$var reg 1 & nReset $end
+$scope module UUT1 $end
+$var wire 8 ' A [7:0] $end
+$var wire 1 ( Clk $end
+$var wire 1 ) CountEn $end
+$var wire 1 * Load $end
+$var wire 1 + nReset $end
+$var reg 8 , Y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 ,
+0+
+0*
+1)
+0(
+b1 '
+0&
+0%
+1$
+0#
+b1 "
+b0 !
+$end
+#5000
+1#
+1(
+#7000
+b1 ,
+b1 !
+0$
+0)
+1%
+1*
+1&
+1+
+#10000
+0#
+0(
+#15000
+1#
+1(
+#17000
+b11 "
+b11 '
+0%
+0*
+#20000
+0#
+0(
+#25000
+1#
+1(
+#27000
+b0 "
+b0 '
+1$
+1)
+#30000
+b10 ,
+b10 !
+0#
+0(
+#35000
+1#
+1(
+#37000
+b11111110 ,
+b11111110 !
+b11111110 "
+b11111110 '
+1%
+1*
+#40000
+0#
+0(
+#45000
+1#
+1(
+#47000
+b11111111 ,
+b11111111 !
+b0 "
+b0 '
+0%
+0*
+#50000
+b0 ,
+b0 !
+0#
+0(
+#55000
+1#
+1(
+#60000
+b1 ,
+b1 !
+0#
+0(
+#65000
+1#
+1(
+#70000
+b10 ,
+b10 !
+0#
+0(
+#75000
+1#
+1(
+#80000
+b11 ,
+b11 !
+0#
+0(
+#85000
+1#
+1(
+#87000

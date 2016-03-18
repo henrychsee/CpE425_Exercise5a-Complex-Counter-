@@ -1,0 +1,181 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00338310 .scope module, "tb_4bitSubtractor" "tb_4bitSubtractor" 2 7;
+ .timescale -9 -12;
+v005A0C68_0 .var "A", 3 0;
+v005A0D18_0 .var "B", 3 0;
+v005A0D70_0 .net "Bout", 0 0, L_005CDDB0; 1 drivers
+v005CD728_0 .var "Cin", 0 0;
+RS_005A42D4 .resolv tri, L_005CD780, L_005CD830, L_005CDAF0, L_005CDA98;
+v005CD8E0_0 .net8 "S", 3 0, RS_005A42D4; 4 drivers
+S_00338970 .scope module, "UUT" "fourbitSubtractor" 2 16, 3 7, S_00338310;
+ .timescale -9 -12;
+L_005A35C8 .functor NOT 1, L_005CD990, C4<0>, C4<0>, C4<0>;
+L_005A11B0 .functor NOT 1, L_005CD7D8, C4<0>, C4<0>, C4<0>;
+L_005CDE58 .functor NOT 1, L_005CD938, C4<0>, C4<0>, C4<0>;
+L_005CDF00 .functor NOT 1, L_005CDB48, C4<0>, C4<0>, C4<0>;
+v005A08A0_0 .net "A", 3 0, v005A0C68_0; 1 drivers
+v005A0A58_0 .net "B", 3 0, v005A0D18_0; 1 drivers
+v005A02C8_0 .alias "Bout", 0 0, v005A0D70_0;
+v005A03D0_0 .net "Cin", 0 0, v005CD728_0; 1 drivers
+v005A04D8_0 .alias "D", 3 0, v005CD8E0_0;
+v005A0690_0 .net *"_s1", 0 0, L_005CD990; 1 drivers
+v005A0F80_0 .net *"_s13", 0 0, L_005CD938; 1 drivers
+v005A0FD8_0 .net *"_s19", 0 0, L_005CDB48; 1 drivers
+v005A0CC0_0 .net *"_s7", 0 0, L_005CD7D8; 1 drivers
+v005A0ED0_0 .net "nw0", 0 0, L_005A35C8; 1 drivers
+v005A0E20_0 .net "nw1", 0 0, L_005A11B0; 1 drivers
+v005A0DC8_0 .net "nw2", 0 0, L_005CDE58; 1 drivers
+v005A0C10_0 .net "nw3", 0 0, L_005CDF00; 1 drivers
+v005A0E78_0 .net "w1", 0 0, L_005A1418; 1 drivers
+v005A0F28_0 .net "w2", 0 0, L_005CDE20; 1 drivers
+v005A1030_0 .net "w3", 0 0, L_005CDC28; 1 drivers
+L_005CD990 .part v005A0D18_0, 0, 1;
+L_005CD780 .part/pv L_005A1220, 0, 1, 4;
+L_005CDA40 .part v005A0C68_0, 0, 1;
+L_005CD7D8 .part v005A0D18_0, 1, 1;
+L_005CD830 .part/pv L_005A1140, 1, 1, 4;
+L_005CD888 .part v005A0C68_0, 1, 1;
+L_005CD938 .part v005A0D18_0, 2, 1;
+L_005CDAF0 .part/pv L_005CE2B8, 2, 1, 4;
+L_005CD9E8 .part v005A0C68_0, 2, 1;
+L_005CDB48 .part v005A0D18_0, 3, 1;
+L_005CDA98 .part/pv L_005CDF38, 3, 1, 4;
+L_005CD0F8 .part v005A0C68_0, 3, 1;
+S_003386C8 .scope module, "UNIT1" "fulladder" 3 25, 4 7, S_00338970;
+ .timescale -9 -12;
+L_005A1220 .functor XOR 1, L_005CDA40, L_005A35C8, v005CD728_0, C4<0>;
+L_005A1300 .functor OR 1, L_005CDA40, L_005A35C8, C4<0>, C4<0>;
+L_005A11E8 .functor AND 1, L_005CDA40, L_005A35C8, C4<1>, C4<1>;
+L_005A1338 .functor AND 1, v005CD728_0, L_005A1300, C4<1>, C4<1>;
+L_005A1418 .functor OR 1, L_005A11E8, L_005A1338, C4<0>, C4<0>;
+v005A09A8_0 .net "A", 0 0, L_005CDA40; 1 drivers
+v005A0638_0 .alias "B", 0 0, v005A0ED0_0;
+v005A06E8_0 .alias "Cin", 0 0, v005A03D0_0;
+v005A0378_0 .alias "Cout", 0 0, v005A0E78_0;
+v005A0950_0 .net "S", 0 0, L_005A1220; 1 drivers
+v005A05E0_0 .net "w1", 0 0, L_005A1300; 1 drivers
+v005A0B60_0 .net "w2", 0 0, L_005A11E8; 1 drivers
+v005A0480_0 .net "w3", 0 0, L_005A1338; 1 drivers
+S_00337E48 .scope module, "UNIT2" "fulladder" 3 27, 4 7, S_00338970;
+ .timescale -9 -12;
+L_005A1140 .functor XOR 1, L_005CD888, L_005A11B0, L_005A1418, C4<0>;
+L_005A1178 .functor OR 1, L_005CD888, L_005A11B0, C4<0>, C4<0>;
+L_005CE248 .functor AND 1, L_005CD888, L_005A11B0, C4<1>, C4<1>;
+L_005CE168 .functor AND 1, L_005A1418, L_005A1178, C4<1>, C4<1>;
+L_005CDE20 .functor OR 1, L_005CE248, L_005CE168, C4<0>, C4<0>;
+v005A0848_0 .net "A", 0 0, L_005CD888; 1 drivers
+v005A0110_0 .alias "B", 0 0, v005A0E20_0;
+v005A0A00_0 .alias "Cin", 0 0, v005A0E78_0;
+v005A0AB0_0 .alias "Cout", 0 0, v005A0F28_0;
+v005A01C0_0 .net "S", 0 0, L_005A1140; 1 drivers
+v005A0218_0 .net "w1", 0 0, L_005A1178; 1 drivers
+v005A0B08_0 .net "w2", 0 0, L_005CE248; 1 drivers
+v005A0270_0 .net "w3", 0 0, L_005CE168; 1 drivers
+S_00338288 .scope module, "UNIT3" "fulladder" 3 29, 4 7, S_00338970;
+ .timescale -9 -12;
+L_005CE2B8 .functor XOR 1, L_005CD9E8, L_005CDE58, L_005CDE20, C4<0>;
+L_005CE088 .functor OR 1, L_005CD9E8, L_005CDE58, C4<0>, C4<0>;
+L_005CE2F0 .functor AND 1, L_005CD9E8, L_005CDE58, C4<1>, C4<1>;
+L_005CE018 .functor AND 1, L_005CDE20, L_005CE088, C4<1>, C4<1>;
+L_005CDC28 .functor OR 1, L_005CE2F0, L_005CE018, C4<0>, C4<0>;
+v005A0428_0 .net "A", 0 0, L_005CD9E8; 1 drivers
+v005A07F0_0 .alias "B", 0 0, v005A0DC8_0;
+v005A0798_0 .alias "Cin", 0 0, v005A0F28_0;
+v005A0530_0 .alias "Cout", 0 0, v005A1030_0;
+v005A0168_0 .net "S", 0 0, L_005CE2B8; 1 drivers
+v005A08F8_0 .net "w1", 0 0, L_005CE088; 1 drivers
+v005A0588_0 .net "w2", 0 0, L_005CE2F0; 1 drivers
+v005A0320_0 .net "w3", 0 0, L_005CE018; 1 drivers
+S_00338068 .scope module, "UNIT4" "fulladder" 3 31, 4 7, S_00338970;
+ .timescale -9 -12;
+L_005CDF38 .functor XOR 1, L_005CD0F8, L_005CDF00, L_005CDC28, C4<0>;
+L_005CE130 .functor OR 1, L_005CD0F8, L_005CDF00, C4<0>, C4<0>;
+L_005CDD78 .functor AND 1, L_005CD0F8, L_005CDF00, C4<1>, C4<1>;
+L_005CE0F8 .functor AND 1, L_005CDC28, L_005CE130, C4<1>, C4<1>;
+L_005CDDB0 .functor OR 1, L_005CDD78, L_005CE0F8, C4<0>, C4<0>;
+v00592000_0 .net "A", 0 0, L_005CD0F8; 1 drivers
+v00592108_0 .alias "B", 0 0, v005A0C10_0;
+v00592370_0 .alias "Cin", 0 0, v005A1030_0;
+v00592210_0 .alias "Cout", 0 0, v005A0D70_0;
+v00591C90_0 .net "S", 0 0, L_005CDF38; 1 drivers
+v00591D40_0 .net "w1", 0 0, L_005CE130; 1 drivers
+v005A0BB8_0 .net "w2", 0 0, L_005CDD78; 1 drivers
+v005A0740_0 .net "w3", 0 0, L_005CE0F8; 1 drivers
+    .scope S_00338310;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "4bitSubtractor.vpd";
+    %vpi_call 2 21 "$dumpvars";
+    %movi 8, 5, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 1, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 9, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 6, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 3, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 2, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 1, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 1, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 8, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 2, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %movi 8, 5, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 5, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 5, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 4, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 3, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 3, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 2, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 2, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %movi 8, 11, 4;
+    %set/v v005A0C68_0, 8, 4;
+    %movi 8, 4, 4;
+    %set/v v005A0D18_0, 8, 4;
+    %set/v v005CD728_0, 1, 1;
+    %delay 10000, 0;
+    %vpi_call 2 72 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "tb_4bitSubtractor.v";
+    "4bitSubtractor.v";
+    "fullAdder.v";

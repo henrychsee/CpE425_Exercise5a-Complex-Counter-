@@ -1,0 +1,89 @@
+$date
+	Wed Jan 20 11:32:11 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_comparator $end
+$var wire 4 ! r [3:0] $end
+$var reg 4 " a [3:0] $end
+$var reg 4 # b [3:0] $end
+$scope module UUT1 $end
+$var wire 4 $ a [3:0] $end
+$var wire 4 % b [3:0] $end
+$var reg 4 & r [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bz001 &
+b10 %
+b1 $
+b10 #
+b1 "
+bz001 !
+$end
+#10000
+bz100 &
+bz100 !
+b1 #
+b1 %
+b10 "
+b10 $
+#20000
+bz010 !
+bz010 &
+b11 #
+b11 %
+b11 "
+b11 $
+#30000
+bz100 !
+bz100 &
+b1001 #
+b1001 %
+b1111 "
+b1111 $
+#40000
+bz100 &
+b101 #
+b101 %
+b1010 "
+b1010 $
+#50000
+bz100 &
+b1 #
+b1 %
+b110 "
+b110 $
+#60000
+bz001 &
+bz001 !
+b10 #
+b10 %
+b1 "
+b1 $
+#70000
+bz010 &
+bz010 !
+b10 "
+b10 $
+#80000
+bz001 &
+bz001 !
+b1110 #
+b1110 %
+b1101 "
+b1101 $
+#90000
+bz100 &
+bz100 !
+b111 #
+b111 %
+b1110 "
+b1110 $
+#100000
